@@ -25,21 +25,23 @@ const Student = db.define("student", {
   imageURL: {
     type: Sequelize.STRING,
     allowNull: true,
+    defaultValue:
+      "https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Transparent-Image.png",
   },
 
   gpa: {
     type: Sequelize.DECIMAL,
     allowNull: true,
     validate: {
-      min: 0,
-      max: 4,
+      min: 0.0,
+      max: 4.0,
     },
   },
 });
 
-Student.associate = (models) => {
-  Student.belongsTo(models.Campus, { foreignKey: "campusId" });
-};
+// Student.associate = (models) => {
+//   Student.belongsTo(models.Campus, { foreignKey: "campusId" });
+// };
 
 // Export the student model
 module.exports = Student;
