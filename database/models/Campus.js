@@ -20,6 +20,11 @@ const Campus = db.define("campus", {
 
   description: {
     type: Sequelize.STRING,
+  },
+  imageURL:{
+    type:Sequelize.STRING,
+    allowNull: true,
+    defaultValue: 'https://zeta.creativecirclecdn.com/chief/original/20241008-134634-eaa-phpmf60Dp.jpg'
   }
 });
 
