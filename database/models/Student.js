@@ -43,8 +43,14 @@ const Student = db.define("student", {
 });
 
 Student.associate = (models) => {
-  Student.belongsTo(models.Campus, { foreignKey: "campusId" });
+  Student.belongsTo(models.Campus, {
+    foreignKey: {
+      name: "campusId",
+      allowNull: true, 
+    },
+  });
 };
+
 
 // Export the student model
 module.exports = Student;
